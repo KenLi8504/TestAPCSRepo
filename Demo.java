@@ -24,7 +24,7 @@ public class Demo{
     return a;
   }
 
-  public static int [][] Create2DArray(int rows, int cols, int maxValue){
+  public static int [][] create2DArray(int rows, int cols, int maxValue){
     int [][] NewArray = new int [rows][cols];
     for (int i = 0; i < rows; i++){
       for (int j = 0; j < cols; j++){
@@ -36,7 +36,7 @@ public class Demo{
     return NewArray;
   }
 
-  public static int [][] Create2DArrayRandomized(int rows, int cols, int maxValue){
+  public static int [][] create2DArrayRandomized(int rows, int cols, int maxValue){
     int [][] NewArray = new int [rows][];
     for (int i = 0; i < rows; i++){
       int NumCols = (int)(Math.round(cols*Math.random()));
@@ -64,6 +64,5 @@ public class Demo{
       printLoop(Integer.parseInt(args[0]));
     }
     else {printLoop(5);}
-    System.out.println(arrayDeepToString(Create2DArrayRandomized(3,4,6)).replace("}, ","},\n "));
   }
 }
