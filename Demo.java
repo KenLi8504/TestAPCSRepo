@@ -24,6 +24,32 @@ public class Demo{
     return a;
   }
 
+  public static int [][] Create2DArray(int rows, int cols, int maxValue){
+    int [][] NewArray = new int [rows][cols];
+    for (int i = 0; i < rows; i++){
+      for (int j = 0; j < cols; j++){
+        double a = Math.random();
+        int b = (int)(Math.round(a*maxValue));
+        NewArray[i][j] = b;
+      }
+    }
+    return NewArray;
+  }
+
+  public static int [][] Create2DArrayRandomized(int rows, int cols, int maxValue){
+    int [][] NewArray = new int [rows][];
+    for (int i = 0; i < rows; i++){
+      int NumCols = (int)(Math.round(cols*Math.random()));
+      NewArray[i] = new int [NumCols];
+      for (int j = 0; j < NumCols; j++){
+        double a = Math.random();
+        int b = (int)(Math.round(a*maxValue));
+        NewArray[i][j] = b;
+      }
+    }
+    return NewArray;
+  }
+
   public static void printLoop(int n){
     for(int i = 1; i <= n; i++){
       for(int j = 0; j <= (n-i); j++){
@@ -38,7 +64,6 @@ public class Demo{
       printLoop(Integer.parseInt(args[0]));
     }
     else {printLoop(5);}
-    int [] [] a = {{9,6,1},{3,4,5},{43,2,1}};
-    System.out.println(arrayDeepToString(a) );
+    System.out.println(arrayDeepToString(Create2DArrayRandomized(3,4,6)).replace("}, ","},\n "));
   }
 }
